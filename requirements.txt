@@ -1,9 +1,15 @@
-# Streamlit 本体
-streamlit==1.27.0
-
-# 画像処理用ライブラリ（安定版）
-Pillow==9.4.0
-
-# ビルド用ツール
-setuptools>=65.5.0
+# pip と setuptools を最新にする
+pip>=25.2
+setuptools>=68.0
 wheel
+
+# Streamlit 本体
+streamlit>=1.25.0
+
+# Pillow 最新安定版
+Pillow>=9.5.0
+
+# 必要なライブラリがあればここに追加
+# 例:
+# pandas>=2.0.0
+# numpy>=1.26.0
