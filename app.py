@@ -40,12 +40,12 @@ due_cards = st.number_input(
 
 # ===== 新規カード労力係数入力 (floatで統一) =====
 factor = st.number_input(
-    "⚠新規カード労力係数 / ⚠Effort Multiplier for New Cards",
+    "⚠新規カード負荷の補正倍率 / ⚠Effort Multiplier for New Cards",
     min_value=1.0,
     max_value=10.0,
     value=float(st.session_state['factor']),
     step=0.1,
-    help="デフォルトは 2.5。通常は触らないことを推奨。\nDefault is 2.5. Recommended not to change unless necessary."
+    help="新規カードにn倍\nDefault is 2.5. Recommended not to change unless necessary."
 )
 
 # ===== 計算ボタン =====
