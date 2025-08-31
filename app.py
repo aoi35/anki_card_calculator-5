@@ -4,9 +4,9 @@ st.title("New Card Limit Calculator / 新規カード上限計算")
 
 # ===== セッションに前回値を保持 =====
 if 'input_time' not in st.session_state:
-    st.session_state['input_time'] = "2:00"
+    st.session_state['input_time'] = "1:00"
 if 'anki_time' not in st.session_state:
-    st.session_state['anki_time'] = "0:30"
+    st.session_state['anki_time'] = "0:15"
 if 'ratio_input' not in st.session_state:
     st.session_state['ratio_input'] = "4:1"
 if 'total_cards' not in st.session_state:
@@ -18,11 +18,11 @@ if 'factor' not in st.session_state:
 
 # ===== 入力フォーム =====
 input_time = st.text_input(
-    "昨日Inputに使った時間 / Yesterday's Input time (例: 2:00)", 
+    "昨日Inputに使った時間 / Yesterday's Input time (例: 1:00)", 
     st.session_state['input_time']
 )
 anki_time = st.text_input(
-    "昨日暗記カードにかかった時間 / Yesterday's Anki time (例: 0:30)", 
+    "昨日暗記カードにかかった時間 / Yesterday's Anki time (例: 0:15)", 
     st.session_state['anki_time']
 )
 ratio_input = st.text_input(
@@ -37,11 +37,13 @@ due_cards = st.number_input(
     "今日が期限のカード枚数 / Cards due today", 
     min_value=0, value=st.session_state['due_cards']
 )
+
+# ===== 新規カード労力係数入力 =====
 factor = st.number_input(
     "新規カード労力係数 / Effort Multiplier for New Cards",
     min_value=1,
     value=st.session_state['factor'],
-    help="Default is 4. Recommended not to change unless you know what you're doing."
+    help="Default is 4. Recommended not to change unless necessary."
 )
 
 # ===== 計算ボタン =====
