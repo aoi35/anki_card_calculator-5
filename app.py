@@ -10,9 +10,9 @@ if 'anki_time' not in st.session_state:
 if 'ratio_input' not in st.session_state:
     st.session_state['ratio_input'] = "4:1"
 if 'total_cards' not in st.session_state:
-    st.session_state['total_cards'] = 10
+    st.session_state['total_cards'] = 20
 if 'due_cards' not in st.session_state:
-    st.session_state['due_cards'] = 0
+    st.session_state['due_cards'] = 8
 if 'factor' not in st.session_state:
     st.session_state['factor'] = 4   # デフォルト係数
 
@@ -43,7 +43,7 @@ factor = st.number_input(
     "新規カード労力係数 / Effort Multiplier for New Cards",
     min_value=1,
     value=st.session_state['factor'],
-    help="Default is 4. Recommended not to change unless necessary."
+    help="デフォルトは 4。通常は触らないことを推奨。\nDefault is 4. Recommended not to change unless necessary."
 )
 
 # ===== 計算ボタン =====
@@ -88,7 +88,9 @@ if st.button("Calculate / 計算"):
         # ユーザー設定係数で割る & 最低0, 四捨五入
         adjusted_cards = max(0, round(new_cards / factor))
 
+        # 縦並び表示（Markdownで改行）
         st.success(
-            f"Recommended number of new cards (adjusted by factor {factor}): {adjusted_cards}\n"
-            f"推奨新規カード枚数 (係数 {factor} で調整後): {adjusted_cards}"
+            f"Recommended number of new cards : {adjusted_cards}  <br>"
+            f"推奨新規カード枚数 : {adjusted_cards}",
+            unsafe_allow_html=True
         )
