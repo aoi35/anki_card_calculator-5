@@ -1,0 +1,24 @@
+# Python関連
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# 仮想環境
+.venv/
+env/
+venv/
+
+# Streamlit / Render用キャッシュ
+.streamlit/
+render/
+
+# OS依存ファイル
+.DS_Store
+Thumbs.db
+
+# ローカル専用フォルダ
+desktop/
+
+# ログファイル
+*.log
