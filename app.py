@@ -90,7 +90,7 @@ if st.button("Calculate / 計算"):
 
         # 縦並び表示（Markdownで改行）
         st.markdown(
-            f"✅ Recommended number of new cards (adjusted by factor {factor}): {adjusted_cards}  <br>"
-            f"✅ 推奨新規カード枚数 (係数 {factor} で調整後): {adjusted_cards}",
+            f"✅ Recommended number of new cards : {adjusted_cards}  <br>"
+            f"✅ 推奨新規カード枚数 : {adjusted_cards}",
             unsafe_allow_html=True
         )
