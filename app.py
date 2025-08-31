@@ -14,7 +14,7 @@ if 'total_cards' not in st.session_state:
 if 'due_cards' not in st.session_state:
     st.session_state['due_cards'] = 8
 if 'factor' not in st.session_state:
-    st.session_state['factor'] = 4   # デフォルト係数
+    st.session_state['factor'] = 2.5   # デフォルト係数
 
 # ===== 入力フォーム =====
 input_time = st.text_input(
@@ -43,7 +43,7 @@ factor = st.number_input(
     "⚠新規カード労力係数 / ⚠Effort Multiplier for New Cards",
     min_value=1,
     value=st.session_state['factor'],
-    help="デフォルトは 4。通常は触らないことを推奨。\nDefault is 4. Recommended not to change unless necessary."
+    help="デフォルトは 2.5。通常は触らないことを推奨。\nDefault is 2.5. Recommended not to change unless necessary."
 )
 
 # ===== 計算ボタン =====
