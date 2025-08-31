@@ -40,7 +40,7 @@ due_cards = st.number_input(
 
 # ===== 新規カード労力係数入力 =====
 factor = st.number_input(
-    "新規カード労力係数 / Effort Multiplier for New Cards",
+    "⚠新規カード労力係数 / ⚠Effort Multiplier for New Cards",
     min_value=1,
     value=st.session_state['factor'],
     help="デフォルトは 4。通常は触らないことを推奨。\nDefault is 4. Recommended not to change unless necessary."
