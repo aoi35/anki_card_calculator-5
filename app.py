@@ -94,3 +94,6 @@ if st.button("Calculate / 計算"):
             f"✅ 推奨新規カード枚数 : {adjusted_cards}",
             unsafe_allow_html=True
         )
+
+        # 追加の補足メッセージ
+        st.info("※ 推奨値はあくまで目安です。学習ペースに合わせて調整してください。The recommended value is only a guideline. Please adjust it according to your learning pace")
